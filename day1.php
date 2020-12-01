@@ -54,7 +54,7 @@ function sumOf2NumbersInArray(array $array, int $sum)
             }
         }
     }
-    return "No values was found";
+    return "No values were found";
 }
 
 function sumOf3NumbersInArray(array $array, int $sum)
@@ -68,5 +68,5 @@ function sumOf3NumbersInArray(array $array, int $sum)
             }
         }
     }
-    return "No values was found";
+    return "No values were found";
 }
