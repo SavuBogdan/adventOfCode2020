@@ -43,7 +43,7 @@
 $data = array_map('intval', explode(PHP_EOL, file_get_contents('Data/day1.txt')));
 
 echo "Part 1: Find the two entries that sum to 2020; what do you get if you multiply them together? ---->>> " . sumOf2NumbersInArray($data, 2020) . PHP_EOL;
-echo "Part 1: what is the product of the three entries that sum to 2020? ---->>> " . sumOf3NumbersInArray($data, 2020) . PHP_EOL;
+echo "Part 2: what is the product of the three entries that sum to 2020? ---->>> " . sumOf3NumbersInArray($data, 2020) . PHP_EOL;
 
 function sumOf2NumbersInArray(array $array, int $sum)
 {
