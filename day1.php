@@ -26,7 +26,6 @@
  *
  * Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
  *
- * Your puzzle answer was 910539.
  *
  * --- Part Two ---
  * The Elves in accounting are thankful for your help; one of them even offers you a starfish coin they had left over from a past vacation. They offer you a second one if you can find three numbers in your expense report that meet the same criteria.
@@ -35,7 +34,6 @@
  *
  * In your expense report, what is the product of the three entries that sum to 2020?
  *
- * Your puzzle answer was 116724144.
  *
  * Both parts of this puzzle are complete! They provide two gold stars: **
  */
