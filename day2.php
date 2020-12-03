@@ -36,32 +36,28 @@ Given the same example list from above:
 1-3 b: cdefg is invalid: neither position 1 nor position 3 contains b.
 2-9 c: ccccccccc is invalid: both position 2 and position 9 contain c.
 How many passwords are valid according to the new interpretation of the policies?
-
-
  *
  */
 
 $data = explode(PHP_EOL, file_get_contents('Data/day2.txt'));
 
-echo "Answer for part 1 is ".part1($data) . PHP_EOL;
-echo "Answer for part 2 is ".part2($data) . PHP_EOL;
-function part1(array $data)
+$pattern = "/(?P<min>\d+)-(?P<max>\d+) (?P<letter>[\w]): (?P<password>.*)/";
+
+echo "Answer for part 1 is " . part1($data, $pattern) . PHP_EOL;
+echo "Answer for part 2 is " . part2($data, $pattern) . PHP_EOL;
+
+function part1(array $data, $pattern, $count = 0)
 {
-    $pattern = "/(\d+)-(\d+) ([\w]+): (.*)$/";
-    $count = 0;
     foreach ($data as $str) {
         preg_match($pattern, $str, $matches);
-        if (substr_count($matches[4], $matches[3]) >= $matches[1] && substr_count($matches[4], $matches[3]) <= $matches[2]) {
-            $count++;
-        }
+        $occurrences = preg_match_all("[" . $matches['letter'] . "]", $matches['password']);
+        ($occurrences >= $matches['min'] && $occurrences <= $matches['max']) ? $count++ : false;
     }
     return $count;
 }
 
-function part2(array $data)
+function part2(array $data, $pattern, $count = 0)
 {
-    $pattern = "/(\d+)-(\d+) ([\w]+): (.*)$/";
-    $count = 0;
     foreach ($data as $str) {
         preg_match($pattern, $str, $matches);
         $arrCount = array_count_values([$matches[4][$matches[1] - 1], $matches[4][$matches[2] - 1]]);
