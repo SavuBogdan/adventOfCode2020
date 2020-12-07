@@ -67,7 +67,6 @@ $data = file_get_contents('Data/day7.txt');
 echo "Part 1 answer is " . findNumberOfBagsThatFit($data, 'shiny gold') . PHP_EOL;
 echo "Part 2 answer is " . findHowManyIndividualBagsAreRequired($data, 'shiny gold') . PHP_EOL;
 
-
 function findNumberOfBagsThatFit($data, $bag, &$validatedBags = [])
 {
     preg_match_all("/(\w*\s\w*)\sbags\scontain.*?\s\d+\s.*?$bag/", $data, $matches);
