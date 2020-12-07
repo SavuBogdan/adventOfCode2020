@@ -90,7 +90,6 @@ function part1day6($data)
     $sum = 0;
     foreach ($groups as $group) {
         $sanitizedGroup = str_replace(PHP_EOL, '', $group);
-        echo $sanitizedGroup . PHP_EOL;
         $sum += count(count_chars($sanitizedGroup, 1));
 
     }
