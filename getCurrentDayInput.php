@@ -6,8 +6,13 @@ $day = (int)date('d');
 $url = "https://adventofcode.com/$year/day/$day/input";
 $payload = executeCurl($url);
 generateNewPhpDayFile($day);
-$payload = implode(PHP_EOL, array_filter(explode(PHP_EOL, $payload)));
-file_put_contents("Data/day$day.txt", $payload);
+generateNewDayDataFile($payload, $day);
+
+function generateNewDayDataFile(bool $payload, int $day)
+{
+    $payload = implode(PHP_EOL, array_filter(explode(PHP_EOL, $payload)));
+    file_put_contents("Data/day$day.txt", $payload);
+}
 
 function executeCurl($url)
 {
