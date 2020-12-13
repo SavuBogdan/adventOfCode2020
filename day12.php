@@ -208,6 +208,7 @@ class Day12
         if ($this->x >= 0 && $this->y <= 0) {
             return 0;
         }
+
         throw new Exception("Invalid Quadrant");
     }
 
