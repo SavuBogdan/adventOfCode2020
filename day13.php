@@ -138,7 +138,7 @@ function calculateFirstBus($timestamp, $busses)
     }
     return $closestBus * $minWaitTime;
 }
-
+//Calculates Chinese Reminder Theorem
 function calculateCRT($data)
 {
     $sum = 0;
@@ -164,5 +164,3 @@ function calculateInverse($Ni, $mod)
         $i++;
     }
 }
-
-function part2BruteForce
