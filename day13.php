@@ -113,9 +113,12 @@ Your puzzle answer was 780601154795940.
 
 $data = file_get_contents('Data/day13.txt');
 [$timestamp, $busses] = parseData($data);
-
+$startTime = round(microtime(true) * 1000000);
 echo "Part 1 solution is " . calculateFirstBus($timestamp, $busses) . PHP_EOL;
+echo 'Elapsed time '.round(microtime(true) * 1000000)-$startTime." μs".PHP_EOL;
+$startTime = round(microtime(true) * 1000000);
 echo "Part 2 solution is " . calculateCRT($busses) . PHP_EOL;
+echo 'Elapsed time '.round(microtime(true) * 1000000)-$startTime." μs".PHP_EOL;
 
 
 function parseData($data)

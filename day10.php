@@ -143,7 +143,9 @@ $data = file_get_contents('Data/day10.txt');
 $data = explode(PHP_EOL, $data);
 sort($data);
 
+$startTime = round(microtime(true) * 1000);
 echo "Part 1 answer " . calculateDifferences($data) . PHP_EOL;
+echo 'Elapsed time '.round(microtime(true) * 1000)-$startTime."ms".PHP_EOL;
 
 function calculateDifferences(array $data)
 {
@@ -159,9 +161,9 @@ function calculateDifferences(array $data)
 }
 
 
-$milliseconds = round(microtime(true) * 1000);
+$startTime = round(microtime(true) * 1000);
 echo 'Part 2 solution is ' . calculateTotalNumberOfPaths($data) . PHP_EOL;
-echo "Elapsed time in ms ". $milliseconds = round(microtime(true) * 1000) - $milliseconds.PHP_EOL;
+echo 'Elapsed time '.round(microtime(true) * 1000)-$startTime."ms".PHP_EOL;
 
 
 function calculateTotalNumberOfPaths($data)

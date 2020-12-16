@@ -93,9 +93,12 @@ Your puzzle answer was 3885232834169.
 $data = file_get_contents('Data/day14.txt');
 $data = explode(PHP_EOL, $data);
 
+$startTime = round(microtime(true) * 1000);
 echo "Part 1 answer is " . sumOfAllMemoryAddresses($data, 1) . PHP_EOL;
+echo 'Elapsed time '.round(microtime(true) * 1000)-$startTime."ms".PHP_EOL;
+$startTime = round(microtime(true) * 1000);
 echo "Part 2 answer is " . sumOfAllMemoryAddresses($data, 2) . PHP_EOL;
-
+echo 'Elapsed time '.round(microtime(true) * 1000)-$startTime."ms".PHP_EOL;
 function sumOfAllMemoryAddresses($data, $part)
 {
     $memory = [];
